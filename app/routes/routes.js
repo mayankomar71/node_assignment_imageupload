@@ -1,4 +1,5 @@
 module.exports=(app)=>{
-    const control_fun=require('../controllers/controllers.js');
-    app.post('/', control_fun.post_image);
+    const imageupload=require('../controllers/controllers.js');
+    app.post('/upload', imageupload.postImage);
+    app.get('/image/:url',imageupload.findImage)
 }

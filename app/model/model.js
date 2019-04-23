@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var image_Schema = new Schema({
+var imageSchema = new Schema({
 	url: {type: String,required: true},
 	fileName : {type: String,require: true},
 });
 
-var image_model = mongoose.model('image_model', image_Schema);
+var fileModel = mongoose.model('imageModel', imageSchema);
 
-module.exports = image_model;
+module.exports = fileModel;

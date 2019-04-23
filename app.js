@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(express.static(__dirname));
 
 const dbConfig = require('./config/database.js');
 const mongoose = require('mongoose');
@@ -19,7 +20,7 @@ mongoose.connect(dbConfig.url, {
 require('./app/routes/routes.js')(app);
 
 
-var server = app.listen(8080, ()=> {
+var server = app.listen(2500, ()=> {
 
   var host = server.address().address
   var port = server.address().port
